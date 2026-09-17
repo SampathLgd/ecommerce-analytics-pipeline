@@ -3,3 +3,5 @@ numpy
 sqlalchemy
 psycopg2-binary
 requests
+pyarrow
+pyarrow
