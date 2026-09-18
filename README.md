@@ -253,7 +253,8 @@ Four visuals in Power BI, built on `sql/dashboard_views.sql` — capped at
 four deliberately, since a tight dashboard reads as more competent than a
 cluttered one:
 
-![Dashboard](docs/screenshots/dashboard.png)
+<img width="958" height="537" alt="image" src="https://github.com/user-attachments/assets/9332104f-b7ee-451b-831d-a29f57f6956b" />
+
 
 - **Monthly Revenue Trend** — steady growth from late 2016 through a
 November 2017 spike (Black Friday), then a plateau into mid-2018.
@@ -273,7 +274,8 @@ point to directly.
 A pivoted Excel export (`Paymentdata.xlsx`) for a non-technical audience,
 sourced from metrics query #7:
 
-![Payment Mix Summary](docs/screenshots/payment_mix_summary.png)
+<img width="682" height="197" alt="image" src="https://github.com/user-attachments/assets/d3545031-6e2f-4ac8-948a-0fe52b1b65f0" />
+
 
 
 | Payment type | Total value (R$)   | Avg. installments | Records      |
@@ -339,12 +341,7 @@ or Prefect DAG instead of running scripts by hand in sequence.
 purchase timestamp, so delivery-time metrics are accurate to within ~1
 day rather than to the hour. Persisting the full timestamp alongside
 the date-dim surrogate key would remove that rounding.
-- **Blend in the Fake Store API data meaningfully**: right now it's a
-standalone "live REST ingestion" proof point in `raw_api_products`,
-intentionally kept out of the star schema. A natural next step (not
-attempted here to keep the core fact tables uncontaminated by
-unrelated data) would be a small `dim_products_external` side table
-demonstrating a multi-source dimensional model.
+- **Live/hybrid ingestion**: Add a secondary live REST API ingestion path (e.g., a public product or pricing API) alongside the batch CSV loads, to demonstrate handling both batch and streaming/API-based sources in the same pipeline.l.
 - **Row-level tests**: add dbt or Great Expectations checks (e.g. no
 orphaned `fact_order_items`, `fact_payments.payment_value` sums
 matching order totals within tolerance) instead of the current single
