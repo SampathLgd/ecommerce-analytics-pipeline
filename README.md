@@ -338,10 +338,14 @@ or Prefect DAG instead of running scripts by hand in sequence.
 purchase timestamp, so delivery-time metrics are accurate to within ~1
 day rather than to the hour. Persisting the full timestamp alongside
 the date-dim surrogate key would remove that rounding.
+<<<<<<< HEAD
 - **Live/hybrid ingestion**: Add a secondary live REST API ingestion path
 (e.g., a public product or pricing API) alongside the batch CSV loads,
 to demonstrate handling both batch and streaming/API-based sources in
 the same pipeline.
+=======
+- **Live/hybrid ingestion**: Add a secondary live REST API ingestion path (e.g., a public product or pricing API) alongside the batch CSV loads, to demonstrate handling both batch and streaming/API-based sources in the same pipeline.l.
+>>>>>>> 14d12f4421215dd46cfb3fef5f0bb1425b7851a6
 - **Row-level tests**: add dbt or Great Expectations checks (e.g. no
 orphaned `fact_order_items`, `fact_payments.payment_value` sums
 matching order totals within tolerance) instead of the current single
