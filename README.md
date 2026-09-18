@@ -345,7 +345,6 @@ to demonstrate handling both batch and streaming/API-based sources in
 the same pipeline.
 =======
 - **Live/hybrid ingestion**: Add a secondary live REST API ingestion path (e.g., a public product or pricing API) alongside the batch CSV loads, to demonstrate handling both batch and streaming/API-based sources in the same pipeline.l.
->>>>>>> 14d12f4421215dd46cfb3fef5f0bb1425b7851a6
 - **Row-level tests**: add dbt or Great Expectations checks (e.g. no
 orphaned `fact_order_items`, `fact_payments.payment_value` sums
 matching order totals within tolerance) instead of the current single
